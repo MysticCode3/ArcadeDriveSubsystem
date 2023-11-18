@@ -27,7 +27,7 @@ public final Joystick joystick = new Joystick(0);
 public class ArcadeDriveSubsystem {
 
     // Initializing
-    public void robotInit() {
+    public void initialize() {
         // Inverting the motors to make sure all of them are moving in the same direction
         frontLeftMotor.setInverted(false);
         rearLeftMotor.setInverted(false);
@@ -90,6 +90,8 @@ public class Robot extends TimedRobot {
     public void robotInit() {
         driveSubsystem = new ArcadeDriveSubsystem();
         autonomousCommand = new AutonomousCommand();
+        driveSubsystem.initialize()
+        autonomousCommand.initialize()
     }
 
     @Override
