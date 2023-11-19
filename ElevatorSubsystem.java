@@ -26,28 +26,28 @@ public class ElevatorSubsystem extends SubsystemBase {
     public void periodic {
         // If button is pressed, raise the elevator, if the button is released, lower the button, else, stop the motors
         if (joystick.getRawButtonPressed(0)) {
-            raise_elevator();
+            raiseRobot();
         } else if (joystick.getRawButtonReleased(0)) {
-            lower_elevator();
+            lowerRobot();
         } else {
-            stop_elevator();
+            stopElevator();
         }
     }
 
     //  Functions to raise and lower motors
-    public void raise_elevator() {
+    public void raiseRobot() {
         // percent output of the motor, 1 being the max to raise them the most
         motor1.set(1.0);
         motor2.set(1.0);
     }
 
-    public void lower_elevator() {
+    public void lowerRobot() {
         // percent output of the motor, -1 being the least to lower them the most
         motor1.set(-1.0);
         motor2.set(-1.0);
     }
 
-    public void stop_elevator() {
+    public void stopElevator() {
         // Stopping the motor
         motor1.set(0.0);
         motor2.set(0.0);
