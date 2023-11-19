@@ -9,11 +9,11 @@ public class ElevatorSubsystem extends SubsystemBase {
 
     // Variables
     // Defining the 2 motors
-    public final CANSparkMax motor1 = new CANSparkMax(1, MotorType.kBrushless);
-    public final CANSparkMax motor2 = new CANSparkMax(2, MotorType.kBrushless);
+    public CANSparkMax motor1 = new CANSparkMax(1, MotorType.kBrushless);
+    public CANSparkMax motor2 = new CANSparkMax(2, MotorType.kBrushless);
 
     // Creating the joystick used to control the elevator
-    public final Joystick joystick = new Joystick(0);
+    public Joystick joystick = new Joystick(0);
 
     // Initializing
     public ElevatorSubsystem() {
