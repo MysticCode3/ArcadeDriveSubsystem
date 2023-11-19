@@ -9,37 +9,31 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 public class GyroSubsystem extends SubsystemBase {
     // Variables
-    // Defining the 2 motors
+    // Defining the motor
     public CANSparkMax motor = new CANSparkMax(1, MotorType.kBrushless);
 
     public PigeonIMU pigeon;
-    public double heading;
     // the angle wanted
-    public double angle_wanted = 45;
+    public final double angleWanted = 45;
 
 
-    public GyroSubsystem {
+    public GyroSubsystem() {
         pigeon = new PigeonIMU(0);
     }
 
     @override
     public void periodic() {
-        check_if_at_angle();
+        checkIfAtAngle();
     }
     
-    public void raise_elevator() {
+    public void raiseElevator() {
         // percent output of the motor, 1 being the max to raise them the most
         motor.set(1.0);
     }
 
-    // Function to get heading
-    public void get_heading() {
-        heading = pigeon.getAngle();
-    }
-
-    public void check_if_at_angle() {
-        if (heading == angle_wanted) {
-            raise_elevator();
+    public void checkIfAtAngle() {
+        if (pigeon.getAngle() == angleWanted) {
+            raiseElevator();
             SmartDashboard.putBoolean("ElevatorRaised", true);
         }
     }
