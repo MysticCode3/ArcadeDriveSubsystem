@@ -3,10 +3,6 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
-// Imports for the autonomous command
-import edu.wpi.first.wpilibj2.command.CommandBase;
-import edu.wpi.first.wpilibj.Timer;
-
 // Timed Robot
 import edu.wpi.first.wpilibj.TimedRobot;
 
