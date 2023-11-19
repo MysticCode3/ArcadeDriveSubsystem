@@ -37,7 +37,6 @@ public class Robot extends TimedRobot {
 
         private final double driveSpeed = 0.5;
         private final double driveTime = 10.0;
-        private final double turnAngle = 90.0;
     }
 
     @Override
@@ -48,10 +47,11 @@ public class Robot extends TimedRobot {
 
         // While the timer is below the drive time the robot moves at the drive speed
         if (timer.get() < driveTime) {
-            // the robot moves at the drive speed and turns 90 degrees gradually throughout the drive_time
-            drive.arcadeDrive(driveSpeed, turnAngle/driveTime);
+            // the robot moves at the drive speed
+            drive.arcadeDrive(driveSpeed, 0.0);
         } else {
-            // Once the timer is greater than the drive time the robot stops
+            // Once the timer is greater than the drive time the robot turns 90 degrees and then stops
+            drive.arcadeDrive(0.0, 0.5);
             drive.stopMotor();
             timer.stop()
         }
