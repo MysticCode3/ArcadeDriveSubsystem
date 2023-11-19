@@ -24,13 +24,17 @@ public class ElevatorSubsystem extends SubsystemBase {
 
     @override
     public void periodic {
-        // If button is pressed, raise the elevator, if the button is released, lower the button, else, stop the motors
-        if (joystick.getRawButtonPressed(0)) {
-            raiseRobot();
-        } else if (joystick.getRawButtonReleased(0)) {
-            lowerRobot();
-        } else {
-            stopElevator();
+        try {
+            // If button is pressed, raise the elevator, if the button is released, lower the button, else, stop the motors
+            if (joystick.getRawButtonPressed(0)) {
+                raiseRobot();
+            } else if (joystick.getRawButtonReleased(0)) {
+                lowerRobot();
+            } else {
+                stopElevator();
+            }
+        } catch (Error e) {
+            System.out.println(e);
         }
     }
 
