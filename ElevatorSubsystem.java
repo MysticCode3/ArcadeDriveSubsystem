@@ -2,6 +2,7 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
 
 public class ElevatorSubsystem extends SubsystemBase {
@@ -21,6 +22,11 @@ public class ElevatorSubsystem extends SubsystemBase {
         motor2.setIdleMode(CANSparkMax.IdleMode.kBrake);
     }
 
+    @override
+    public void periodic {
+        controller();
+    }
+    
     public void controller {
         // If button is pressed, raise the elevator, if the button is released, lower the button, else, stop the motors
         if (joystick.getRawButtonPressed(0)) {
