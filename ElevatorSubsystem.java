@@ -24,10 +24,6 @@ public class ElevatorSubsystem extends SubsystemBase {
 
     @override
     public void periodic {
-        controller();
-    }
-    
-    public void controller {
         // If button is pressed, raise the elevator, if the button is released, lower the button, else, stop the motors
         if (joystick.getRawButtonPressed(0)) {
             raise_elevator();
