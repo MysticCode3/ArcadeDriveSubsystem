@@ -14,42 +14,37 @@ public class ElevatorSubsystem extends SubsystemBase {
     public final Joystick joystick = new Joystick(0);
 
     // Initializing
-    public void robotInit() {
+    public ElevatorSubsystem() {
         // Set the motors to idle mode at initialization
         motor1.setIdleMode(CANSparkMax.IdleMode.kBrake);
         motor2.setIdleMode(CANSparkMax.IdleMode.kBrake);
     }
 
-    public void teleopPeriodic() {
-        //  Runs the controller
-        controller();
-    }
-
     public void controller {
         // If button is pressed, raise the elevator, if the button is released, lower the button, else, stop the motors
         if (joystick.getRawButtonPressed(0)) {
-            raise();
+            raise_elevator();
         } else if (joystick.getRawButtonReleased(0)) {
-            lower();
+            lower_elevator();
         } else {
-            stop();
+            stop_elevator();
         }
     }
 
     //  Functions to raise and lower motors
-    public void raise() {
+    public void raise_elevator() {
         // percent output of the motor, 1 being the max to raise them the most
         motor1.set(1.0);
         motor2.set(1.0);
     }
 
-    public void lower() {
+    public void lower_elevator() {
         // percent output of the motor, -1 being the least to lower them the most
         motor1.set(-1.0);
         motor2.set(-1.0);
     }
 
-    public void stop() {
+    public void stop_elevator() {
         // Stopping the motor
         motor1.set(0.0);
         motor2.set(0.0);
