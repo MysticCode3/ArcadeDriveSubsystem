@@ -35,6 +35,8 @@ public class GyroSubsystem extends SubsystemBase {
         if (pigeon.getAngle() == angleWanted) {
             raiseElevator();
             SmartDashboard.putBoolean("ElevatorRaised", true);
+        } else {
+            SmartDashboard.putBoolean("ElevatorRaised", false);
         }
     }
 
