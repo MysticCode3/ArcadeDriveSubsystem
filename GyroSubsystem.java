@@ -18,10 +18,15 @@ public class GyroSubsystem extends SubsystemBase {
     public double angle_wanted = 45;
 
 
-    public void robotInit() {
+    public GyroSubsystem {
         pigeon = new PigeonIMU(0);
     }
 
+    @override
+    public void periodic() {
+        check_if_at_angle();
+    }
+    
     public void raise_elevator() {
         // percent output of the motor, 1 being the max to raise them the most
         motor.set(1.0);
