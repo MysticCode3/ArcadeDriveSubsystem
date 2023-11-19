@@ -6,8 +6,6 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
 
 public class ElevatorSubsystem extends SubsystemBase {
-
-    // Variables
     // Defining the 2 motors
     public CANSparkMax motor1 = new CANSparkMax(1, MotorType.kBrushless);
     public CANSparkMax motor2 = new CANSparkMax(2, MotorType.kBrushless);
