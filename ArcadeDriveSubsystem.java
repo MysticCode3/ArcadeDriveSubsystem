@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.Timer;
 
 // Robot
-public class Robot extends TimedRobot {
+public class ArcadeDriveSubsystem extends TimedRobot {
 
     // Defining all 4 motors(both left and both right), CANSparkMax(device id, motor type)
     public CANSparkMax frontLeftMotor = new CANSparkMax(1, MotorType.kBrushless);
