@@ -75,7 +75,7 @@ public class AutonomousCommand extends CommandBase {
             drive.arcadeDrive(drive_speed, turn_angle/drive_time);
         } else {
             // Once the timer is greater than the drive time the robot stops
-            drive.arcadeDrive(0.0, 0.0);
+            drive.stopMotor();
         }
     }
 }
