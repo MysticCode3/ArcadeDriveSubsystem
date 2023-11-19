@@ -23,7 +23,9 @@ public class GyroSubsystem extends SubsystemBase {
 
     @override
     public void periodic() {
-        checkIfAtAngle();
+        try {
+            checkIfAtAngle();
+        }
     }
     
     public void raiseElevator() {
