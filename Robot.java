@@ -60,7 +60,11 @@ public class Robot extends TimedRobot {
 
     @Override
     public void teleopPeriodic() {
-        // Gets the x and y value from the joystick to control the arcadeDrive
-        drive.arcadeDrive(-joystick.getY(), -joystick.getX()); 
+        try {
+            // Gets the x and y value from the joystick to control the arcadeDrive
+            drive.arcadeDrive(-joystick.getY(), -joystick.getX()); 
+        } catch (Error e) {
+            System.out.println(e);
+        }
     }
 }
