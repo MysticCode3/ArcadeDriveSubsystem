@@ -25,6 +25,8 @@ public class GyroSubsystem extends SubsystemBase {
     public void periodic() {
         try {
             checkIfAtAngle();
+        } catch (Error e) {
+            System.out.println(e);
         }
     }
     
