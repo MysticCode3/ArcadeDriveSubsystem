@@ -10,9 +10,9 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 public class GyroSubsystem extends SubsystemBase {
     // Variables
     // Defining the 2 motors
-    public final CANSparkMax motor = new CANSparkMax(1, MotorType.kBrushless);
+    public CANSparkMax motor = new CANSparkMax(1, MotorType.kBrushless);
 
-    public final PigeonIMU pigeon;
+    public PigeonIMU pigeon;
     public double heading;
     // the angle wanted
     public double angle_wanted = 45;
